@@ -1,0 +1,257 @@
+Here's a basic example of a chatbot application using HTML, CSS, and JavaScript. This chatbot will respond to basic user queries.Here's a basic example of a chatbot application using HTML, CSS, and JavaScript. This chatbot will retml*
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chatbot</h2>
+        </div>
+        <div class="chat-body">
+            <div class="message-container">
+                <div class="message" id="user-message"></div>
+                <div class="message" id="bot-message"></div>
+            </div>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+*style.css*
+```
+body {
+    font-family: Arial, sans-serif;
+}
+
+.chat-container {
+    width: 400px;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.chat-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-body {
+    padding: 20px;
+}
+
+.message-container {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+#user-message {
+    background-color: #ccc;
+}
+
+#bot-message {
+    background-color: #0f0;
+}
+
+#user-input {
+    width: 70%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#send-button {
+    width: 20%;
+    height: 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #3e8e41;
+}
+```
+
+*script.js*
+```
+const userMessage = document.getElementById('user-message');
+const botMessage = document.getElementById('bot-message');
+const userInput = document.getElementById('user-input');
+const sendButton = document.getElementById('send-button');
+
+const botResponses = {
+    'hello': 'Hi! How can I assist you today?',
+    'how are you': 'I\'m doing well, thanks for asking!',
+    'what is your purpose': 'I\'m here to provide information and answer your questions to the best of my abilities.',
+    'default': 'Sorry, I didn\'t understand that. Can you please rephrase your question?'
+};
+
+sendButton.addEventListener('click', () => {
+    const userText = userInput.value.toLowerCase();
+    let botText = '';
+
+    if (userText === '') {
+        botText = 'Please enter a message.';
+    } else if (botResponses[userText]) {
+        botText = botResponses[userText];
+    } else {
+        botText = botResponses['default'];
+    }
+
+    userMessage.innerText = userText;
+    botMessage.innerText = botText;
+    userInput.value = '';
+});
+```
+
+This code creates a basic chatbot that responds to user input. The chatbot has a predefined set of responses to specific user queries. If the user enters some responses, the chatbot will respond with a default message.
+
+*index.html*
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chatbot</h2>
+        </div>
+        <div class="chat-body">
+            <div class="message-container">
+                <div class="message" id="user-message"></div>
+                <div class="message" id="bot-message"></div>
+            </div>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+*style.css*
+```
+body {
+    font-family: Arial, sans-serif;
+}
+
+.chat-container {
+    width: 400px;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.chat-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-body {
+    padding: 20px;
+}
+
+.message-container {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+#user-message {
+    background-color: #ccc;
+}
+
+#bot-message {
+    background-color: #0f0;
+}
+
+#user-input {
+    width: 70%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#send-button {
+    width: 20%;
+    height: 30px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #3e8e41;
+}
+```
+
+*script.js*
+```
+const userMessage = document.getElementById('user-message');
+const botMessage = document.getElementById('bot-message');
+const userInput = document.getElementById('user-input');
+const sendButton = document.getElementById('send-button');
+
+const botResponses = {
+    'hello': 'Hi! How can I assist you today?',
+    'how are you': 'I\'m doing well, thanks for asking!',
+    'what is your purpose': 'I\'m here to provide information and answer your questions to the best of my abilities.',
+    'default': 'Sorry, I didn\'t understand that. Can you please rephrase your question?'
+};
+
+sendButton.addEventListener('click', () => {
+    const userText = userInput.value.toLowerCase();
+    let botText = '';
+
+    if (userText === '') {
+        botText = 'Please enter a message.';
+    } else if (botResponses[userText]) {
+        botText = botResponses[userText];
+    } else {
+        botText = botResponses['default'];
+    }
+
+    userMessage.innerText = userText;
+    botMessage.innerText = botText;
+    userInput.value = '';
+});
+```
+
+This code creates a basic chatbot that responds to user input. The chatbot has a predefined set of responses to specific user queries. If the user enters some responses, the chatbot will respond with a default message.
